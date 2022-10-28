@@ -35,3 +35,31 @@ connect discovery
 SELECT * FROM `greeting`;
 
 ```
+
+***
+***
+
+### Task 4. Health check
+
+1. Add `HEALTHCHECK CMD` instruction to **Dockerfile** of your MySQL image from **Task 3**. <br>
+   This instruction should use MySQL command-line tool to connect to the server and execute “SHOW DATABASES;” command.
+2. Re-build image and run container. Run docker ps command. What is the container status?
+3. Wait until status becomes **healthy**.
+
+#### In shell:
+
+```shell
+cd docker-task3
+
+#1)build image
+docker build -t ta4anka/task4 .
+
+#2)run container 
+docker run --name mysql_container_with_health -d ta4anka/task4 
+
+#3)Displays all the running containers
+docker ps
+
+# show healthcheck logs
+docker inspect --format "{{json .State.Health}}}" mysql_container_with_health
+```
