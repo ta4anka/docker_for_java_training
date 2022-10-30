@@ -2,6 +2,4 @@ FROM eclipse-temurin:19-alpine
 
 ADD target/spring-boot-docker.jar app.jar
 
-ENV JAVA_OPTS=""
-
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
+ENTRYPOINT ["java", "-jar", "/app.jar" ]
