@@ -10,3 +10,22 @@
 5. Build new image and try to run it as container. Open http://localhost:8080 in your browser. How would you avoid
    downloading all the Maven dependencies during build?
 6. (Optional) Add HEALTHCHECK instruction for the second stage.
+
+***
+Useful Links:
+
+- [Spring Boot with Docker](https://spring.io/guides/gs/spring-boot-docker/)
+
+***
+
+#### In shell:
+
+```shell
+cd docker-task6
+
+#1)build image
+docker build -t ta4anka/task6 .
+
+#2)run container
+docker run -it -p 8080:8080 ta4anka/task6
+```
