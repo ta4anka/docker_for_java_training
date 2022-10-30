@@ -11,10 +11,6 @@
     - **6.2**    It should use mysql container from the previous task
 7. Run both containers and check if jvm container can connect to mysql container
 8. Specify parameter `--net=network1` when running containers. What has changed?
-9. Create `docker network create --driver=bridge network1` and specify different networks for jvm/mysql containers.
-10. Run command to view all the containers that use created network: `docker network inspect network1`. What is IP
-    address of new containers? Can you ping one container from another container? If yes then can you use host name in
-    ping command?
 
 Notes:
 
@@ -30,4 +26,24 @@ docker inspect <container_id> -f "{{json .NetworkSettings.Networks }}"
 # 3)
 docker ps --format '{{ .ID }} {{ .Names }} {{ json .Networks }}'
 
+```
+
+***
+
+#### In shell:
+
+```shell
+cd docker-task5
+
+#1)build image
+docker build -t ta4anka/task5 .
+
+#2) Create new network:
+docker network create --driver=bridge network1
+
+#3)run containers in network1
+
+docker run --name mysql_container_from_task_3 --net=network1 -d ta4anka/task3
+#wait 1 minute until mysql_container_from_task_3 has status `healthy`
+docker run --net=network1 -it ta4anka/task5
 ```
