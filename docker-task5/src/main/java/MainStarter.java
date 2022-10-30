@@ -1,5 +1,3 @@
-package it.discovery;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MainStarter {
-	private static final String url = "jdbc:mysql://mysql:3306/discovery?useSSL=false&allowPublicKeyRetrieval=true";
+	private static final String url = "jdbc:mysql://mysql_container_from_task_3:3306/discovery?useSSL=false&allowPublicKeyRetrieval=true";
 	private static final String user = "root";
 	private static final String password = "root";
 
