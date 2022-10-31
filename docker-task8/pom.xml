@@ -9,12 +9,40 @@
     </parent>
     <artifactId>docker-task8</artifactId>
 
+    <properties>
+        <jkube.enricher.jkube-service.port>8080</jkube.enricher.jkube-service.port>
+        <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
+    </properties>
+
+
     <build>
         <finalName>spring-boot-docker</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jkube</groupId>
+                <artifactId>kubernetes-maven-plugin</artifactId>
+                <version>1.9.1</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>ta4anka/task8:${project.version}</name>
+                            <alias>hello-world</alias>
+                            <build>
+                                <from>eclipse-temurin:19-alpine</from>
+                                <cmd>java -jar maven/${project.artifactId}-${project.version}.jar</cmd>
+                            </build>
+                            <run>
+                                <wait>
+                                    <log>Task 8 : Hello World!</log>
+                                </wait>
+                            </run>
+                        </image>
+                    </images>
+                </configuration>
             </plugin>
         </plugins>
     </build>
