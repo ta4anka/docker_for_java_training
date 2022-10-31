@@ -29,3 +29,21 @@ docker build -t ta4anka/task6 .
 #2)run container
 docker run -it -p 8080:8080 ta4anka/task6
 ```
+### Task 6.2 Add `Jlink` to multi-stage builds
+- [jlink - oracle docs](https://docs.oracle.com/javase/9/tools/jlink.htm#JSWOR-GUID-CECAC52B-CFEE-46CB-8166-F17A8E9280E9)
+- [Guide to jlink](https://www.baeldung.com/jlink)
+
+***
+```shell
+cd docker-task6
+
+#1)build image
+docker build -t ta4anka/task6_v2 .
+
+#2)run container
+docker run -it -p 8080:8080 ta4anka/task6_v2
+```
+***
+- Before adding **Jlink** - size of `ta4anka/task6` image = 392MB
+- After adding **Jlink** - size of `ta4anka/task6_v2` image = 117MB
+
