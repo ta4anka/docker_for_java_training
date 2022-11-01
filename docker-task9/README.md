@@ -23,9 +23,21 @@
 
  ```
 
-2. Run Maven build using Docker daemon: `mvn compile jib:dockerBuild` and check that new image **
-   ta4anka/task9-jib-demo** has been
+2. Run Maven build using Docker daemon: `mvn compile jib:dockerBuild` and check that new image 
+   **ta4anka/task9-jib-demo** has been
    created locally.
 3. What will happen if you run `mvn compile jib:build`?
 4. Stop Docker daemon and build your image directly to Docker hub: `mvn compile jib:build`
 
+***
+
+```shell
+cd docker-task9
+
+#1)build image
+mvn compile jib:dockerBuild
+
+#2)run container
+docker run -it -p 8080:8080 ta4anka/task9-jib-demo
+```
+***

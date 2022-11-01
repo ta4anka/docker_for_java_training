@@ -16,6 +16,22 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <from>
+                        <image>eclipse-temurin:19-alpine</image>
+                    </from>
+                    <to>
+                        <image>ta4anka/task9-jib-demo</image>
+                    </to>
+                    <container>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                    </container>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
