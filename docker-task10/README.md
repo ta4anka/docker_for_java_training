@@ -21,3 +21,15 @@
 Useful Links:
 - [Build images with Cloud Native Buildpacks](https://zoltanaltfatter.com/2020/12/26/build-images-with-cloud-native-buildpacks/)
 - [Why your images were apparently created 40 years ago](https://medium.com/buildpacks/time-travel-with-pack-e0efd8bf05db)
+
+***
+```shell
+cd docker-task10
+
+#1)build image
+mvn spring-boot:build-image 
+
+#2)run container
+docker run -it -p 8080:8080 docker-task10:0.0.1-SNAPSHOT
+```
+***
