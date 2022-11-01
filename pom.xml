@@ -45,6 +45,7 @@
         <module>docker-task5</module>
         <module>docker-task6</module>
         <module>docker-task8</module>
+        <module>docker-task9</module>
     </modules>
 
     <repositories>
