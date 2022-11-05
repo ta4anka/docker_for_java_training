@@ -21,3 +21,16 @@
 13. Run Docker Compose using command to override default settings `docker-compose -f docker-compose.yml -f
     docker-compose.prod.yml u`p
 14. Verify that MySQL root password has changed
+
+***
+***
+```shell
+cd cd docker-task11/src/main/resources
+
+#1)
+docker-compose config
+
+#2)
+docker-compose up --build
+```
+***
